@@ -118,7 +118,8 @@ int format_string(char*** comment_variables, unsigned short var_length) {
 	for(i = 0; i < var_length; ++i) {
 
 		// Formatting string in style we want so it will match the Regex
-		sprintf(buf, "^;%s:*", (*comment_variables)[i]);
+		sprintf(buf, "^;%s:.*", (*comment_variables)[i]);
+		fprintf(stdout, "String: %s\n", buf);
 
 		//free(comment_variables[i]); // Need to deallocated before reallocating
 
@@ -143,7 +144,6 @@ int main(int argc, char** argv) {
 	format_string(&var_names, var_length); 			// Formatting strings into regex recognizable strings
 
 	parse_comments(name, var_names, var_length);
-
 
 
 
