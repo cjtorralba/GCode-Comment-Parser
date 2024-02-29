@@ -52,7 +52,7 @@ int parse_comments(const char* file_name, char** variable_names, unsigned short 
 			reg_return = regexec(&regex, line, 0, NULL, 0);
 
 			if(!reg_return) { // Check for match
-				printf("Match on this line: %s", line);
+				fprintf(stderr, "Match on this line: %s", line);
 			} else {
 				//regerror(reg_return, &regex, err_buf, sizeof(err_buf));
 				//fprintf(stderr, "Regex compilation failed: %s\n", err_buf);
